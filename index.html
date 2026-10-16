@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
+<title>LoveLingo</title><style>:root{--ink:#20222F;--sub:#6C6E7B;--faint:#A6A8B4;--line:#E6E8F4;--page:#F5F6FC;--card:#FFFFFF;--blue:#3A63F3;--violet:#6B5BD6;--soft:#EAF0FF}
+@media (prefers-color-scheme: dark){:root{--ink:#ECEDF5;--sub:#B4B6C4;--faint:#80828F;--line:#2C2F3E;--page:#14151C;--card:#1C1E28;--blue:#8EA6FF;--violet:#B3A8FF;--soft:#232845}}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Hiragino Sans","Noto Sans KR","Noto Sans JP",sans-serif;line-height:1.75}
+main{max-width:720px;margin:0 auto;padding:28px 16px 56px}
+.brand{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}
+.brand a{color:var(--violet);font-weight:800;letter-spacing:.06em;font-size:13px;text-decoration:none}
+.langs{display:flex;gap:6px}.langs button{border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700;cursor:pointer}
+.langs button[aria-pressed="true"]{background:var(--soft);color:var(--blue);border-color:transparent}
+h1{font-size:24px;line-height:1.35;margin:0 0 6px}
+.meta{color:var(--sub);font-size:12.5px;margin:0 0 22px}
+section{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 18px;margin:12px 0}
+h2{font-size:15.5px;margin:0 0 6px}p{margin:6px 0;font-size:14.5px;color:var(--ink)}
+nav.links{display:grid;gap:10px;margin-top:6px}nav.links a{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 18px;color:var(--ink);text-decoration:none;font-weight:700}
+nav.links a span{display:block;color:var(--sub);font-weight:500;font-size:12.5px;margin-top:2px}
+footer{color:var(--faint);font-size:12px;margin-top:28px}
+a{color:var(--blue)}
+[lang-block][hidden]{display:none}</style></head>
+<body><main data-title-ko="LoveLingo · 한국어·일본어 학습" data-title-ja="LoveLingo · 韓国語・日本語学習">
+<div class="brand"><a href="./">LOVELINGO</a><div class="langs"><button type="button" data-lang="ko" aria-pressed="true">한국어</button><button type="button" data-lang="ja" aria-pressed="false">日本語</button></div></div>
+<div lang-block="ko" lang="ko"><h1>LoveLingo</h1><p class="meta">스토리와 레슨, 노래로 한국어와 일본어를 배우는 앱이에요.</p><nav class="links"><a href="privacy/">개인정보처리방침<span>어떤 정보를 어떻게 다루는지</span></a><a href="terms/">이용약관<span>앱을 쓸 때의 약속</span></a><a href="support/">고객 지원<span>문의 방법과 자주 묻는 질문</span></a></nav></div><div lang-block="ja" lang="ja"><h1>LoveLingo</h1><p class="meta">ストーリー・レッスン・歌で韓国語と日本語を学べるアプリです。</p><nav class="links"><a href="privacy/">プライバシーポリシー<span>情報の取り扱いについて</span></a><a href="terms/">利用規約<span>アプリを使うときのお約束</span></a><a href="support/">サポート<span>お問い合わせとよくある質問</span></a></nav></div>
+<footer>© 2026 Minjae Jeon · <a href="mailto:wmj5169@naver.com">wmj5169@naver.com</a></footer>
+</main><script>(function(){var q=new URLSearchParams(location.search).get('lang');var nav=(navigator.language||'').toLowerCase();var lang=q==='ja'||q==='ko'?q:(nav.indexOf('ja')===0?'ja':'ko');
+function show(l){document.documentElement.lang=l;document.querySelectorAll('[lang-block]').forEach(function(e){e.hidden=e.getAttribute('lang-block')!==l});document.querySelectorAll('.langs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===l?'true':'false')});var t=document.querySelector('[data-title-'+l+']');if(t)document.title=t.getAttribute('data-title-'+l);}
+document.querySelectorAll('.langs button').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.lang);var u=new URL(location.href);u.searchParams.set('lang',b.dataset.lang);history.replaceState(null,'',u)})});show(lang);})();</script></body></html>
