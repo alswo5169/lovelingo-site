@@ -11,9 +11,13 @@ section{background:var(--card);border:1px solid var(--line);border-radius:18px;p
 h2{font-size:15.5px;margin:0 0 6px}p,li{margin:6px 0;font-size:14.5px}ul{padding-left:20px;margin:6px 0}
 nav.links{display:grid;gap:10px;margin-top:6px}nav.links a{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:15px 18px;color:var(--ink);text-decoration:none;font-weight:700}
 nav.links a span{display:block;color:var(--sub);font-weight:500;font-size:12.5px;margin-top:2px}
-footer{color:var(--faint);font-size:12px;margin-top:28px}a{color:var(--accent)}</style></head>
-<body><main><div class="brand"><a href="./">엄마가 뭐랬어</a></div>
-<h1>엄마가 뭐랬어</h1><p class="meta">엄마처럼 잔소리해 주는 캘린더 앱이에요.</p>
-<nav class="links"><a href="privacy/">개인정보처리방침<span>어떤 정보를 어떻게 다루는지</span></a><a href="support/">고객 지원<span>문의 방법과 자주 묻는 질문</span></a></nav>
+footer{color:var(--faint);font-size:12px;margin-top:28px}a{color:var(--accent)}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:18px}.langs{display:flex;gap:6px}.langs button{border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:999px;padding:5px 12px;font-size:12px;font-weight:700}.langs button[aria-pressed="true"]{background:var(--soft);color:var(--accent);border-color:transparent}[lang-block][hidden]{display:none}</style></head>
+<body><main data-title-ko="엄마가 뭐랬어" data-title-ja="小言カレンダー"><div class="top"><div class="brand" style="margin:0"><a href="./"><span lang-block="ko">엄마가 뭐랬어</span><span lang-block="ja" hidden>小言カレンダー</span></a></div><div class="langs"><button type="button" data-lang="ko" aria-pressed="true">한국어</button><button type="button" data-lang="ja" aria-pressed="false">日本語</button></div></div>
+<div lang-block="ko" lang="ko"><h1>엄마가 뭐랬어</h1><p class="meta">엄마처럼 잔소리해 주는 캘린더 앱이에요.</p>
+<nav class="links"><a href="privacy/">개인정보처리방침<span>어떤 정보를 어떻게 다루는지</span></a><a href="support/">고객 지원<span>문의 방법과 자주 묻는 질문</span></a></nav></div><div lang-block="ja" lang="ja" hidden><h1>小言カレンダー</h1><p class="meta">お母さんみたいに小言を言ってくれるカレンダーアプリです。</p>
+<nav class="links"><a href="privacy/?lang=ja">プライバシーポリシー<span>どんな情報をどう扱うか</span></a><a href="support/?lang=ja">サポート<span>お問い合わせ方法とよくある質問</span></a></nav></div>
 <footer>© 2026 Minjae Jeon · <a href="mailto:wmj5169@naver.com">wmj5169@naver.com</a></footer>
-</main></body></html>
+</main><script>(function(){var q=new URLSearchParams(location.search).get('lang');var nav=(navigator.language||'').toLowerCase();var lang=q==='ja'||q==='ko'?q:(nav.indexOf('ja')===0?'ja':'ko');
+function show(l){document.documentElement.lang=l;document.querySelectorAll('[lang-block]').forEach(function(e){e.hidden=e.getAttribute('lang-block')!==l});document.querySelectorAll('.langs button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.lang===l?'true':'false')});var t=document.querySelector('[data-title-'+l+']');if(t)document.title=t.getAttribute('data-title-'+l);}
+document.querySelectorAll('.langs button').forEach(function(b){b.addEventListener('click',function(){show(b.dataset.lang);var u=new URL(location.href);u.searchParams.set('lang',b.dataset.lang);history.replaceState(null,'',u)})});show(lang);})();</script></body></html>
