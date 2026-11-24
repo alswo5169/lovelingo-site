@@ -16,3 +16,8 @@ LoveLingo의 개인정보처리방침 · 이용약관 · 고객 지원 페이지
 
 - `momsaid/` 폴더: `https://lovelingo.jmj-studio.com/momsaid/privacy/` · `/momsaid/support/` (한국어만, 일본어판이 나올 때 같이 더함)
 - 같은 주인 애드몹 계정이라 루트의 `app-ads.txt` 한 줄을 같이 써요. App Store Connect의 '마케팅 URL'(개발자 웹사이트)을 이 도메인으로 두면 애드몹이 찾아요.
+
+## IF 요원 (2026-11-24)
+
+- `ifagent/` 폴더: `https://lovelingo.jmj-studio.com/ifagent/privacy/` · `/ifagent/terms/` · `/ifagent/support/` (한국어만)
+- 사용자 글(오늘의 만약 · 온라인 방 채팅)이 있어서 이용약관(무관용 · 신고 · 차단)도 따로 둬요.
